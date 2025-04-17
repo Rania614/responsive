@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Pharmed</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="text-primary">Pharmed</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                            <li><a class="dropdown-item" href="prescription.html">Prescription Services</a></li>
+                            <li><a class="dropdown-item" href="health-check.html">Health Check-ups</a></li>
+                            <li><a class="dropdown-item" href="emergency.html">Emergency Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Appointment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="appointmentFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="appointmentFirstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="appointmentLastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="appointmentEmail" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="appointmentPhone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentDate" class="form-label">Preferred Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentTime" class="form-label">Preferred Time</label>
+                                <select class="form-select" id="appointmentTime" required>
+                                    <option value="">Select Time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentService" class="form-label">Service Type</label>
+                                <select class="form-select" id="appointmentService" required>
+                                    <option value="">Select Service</option>
+                                    <option value="prescription">Prescription Services</option>
+                                    <option value="health-check">Health Check-up</option>
+                                    <option value="consultation">Medical Consultation</option>
+                                    <option value="emergency">Emergency Services</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentDoctor" class="form-label">Preferred Doctor (Optional)</label>
+                                <select class="form-select" id="appointmentDoctor">
+                                    <option value="">Any Available Doctor</option>
+                                    <option value="dr-smith">Dr. Smith</option>
+                                    <option value="dr-johnson">Dr. Johnson</option>
+                                    <option value="dr-williams">Dr. Williams</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="appointmentNotes" class="form-label">Additional Notes</label>
+                                <textarea class="form-control" id="appointmentNotes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitAppointment">Submit Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Hero Section -->
+    <section class="blog-hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Our Blog</h1>
+                    <p class="lead mb-4">Stay updated with the latest healthcare news and tips.</p>
+                    <div class="search-box">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Search articles...">
+                            <button class="btn btn-warning" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="imgs/Blog.avif" alt="Blog" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories py-4 bg-light">
+        <div class="container">
+            <div class="d-flex justify-content-center flex-wrap">
+                <a href="#" class="btn btn-outline-primary me-2 mb-2">All</a>
+                <a href="#" class="btn btn-outline-primary me-2 mb-2">Health Tips</a>
+                <a href="#" class="btn btn-outline-primary me-2 mb-2">Medication</a>
+                <a href="#" class="btn btn-outline-primary me-2 mb-2">Wellness</a>
+                <a href="#" class="btn btn-outline-primary me-2 mb-2">Research</a>
+                <a href="#" class="btn btn-outline-primary mb-2">News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Featured Post -->
+                <div class="col-lg-8">
+                    <div class="featured-post card border-0 shadow-sm">
+                        <img src="imgs/Featured Post.avif" class="card-img-top" alt="Featured Post" >
+                        <div class="card-body">
+                            <div class="post-meta mb-3">
+                                <span class="badge bg-primary">Featured</span>
+                                <span class="text-muted ms-2">March 15, 2024</span>
+                            </div>
+                            <h2 class="card-title">Understanding Your Prescription Medications</h2>
+                            <p class="card-text">Learn how to properly understand and manage your prescription medications for better health outcomes.</p>
+                            <a href="#" class="btn btn-warning">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <div class="sidebar">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Popular Posts</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-3">
+                                        <a href="#" class="text-decoration-none">
+                                            <h6 class="mb-1">10 Tips for Better Sleep</h6>
+                                            <small class="text-muted">March 10, 2024</small>
+                                        </a>
+                                    </li>
+                                    <li class="mb-3">
+                                        <a href="#" class="text-decoration-none">
+                                            <h6 class="mb-1">Managing Chronic Conditions</h6>
+                                            <small class="text-muted">March 8, 2024</small>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="text-decoration-none">
+                                            <h6 class="mb-1">Healthy Eating Habits</h6>
+                                            <small class="text-muted">March 5, 2024</small>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Categories</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Health Tips (15)</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Medication (8)</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Wellness (12)</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Research (5)</a></li>
+                                    <li><a href="#" class="text-decoration-none">News (10)</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Regular Posts -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="imgs/post.avif" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="post-meta mb-2">
+                                <span class="text-muted">March 12, 2024</span>
+                            </div>
+                            <h5 class="card-title">The Importance of Regular Health Check-ups</h5>
+                            <p class="card-text">Regular health check-ups are essential for early detection and prevention of diseases.</p>
+                            <a href="#" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="imgs/postt.avif" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="post-meta mb-2">
+                                <span class="text-muted">March 10, 2024</span>
+                            </div>
+                            <h5 class="card-title">Managing Stress for Better Health</h5>
+                            <p class="card-text">Learn effective ways to manage stress and improve your overall well-being.</p>
+                            <a href="#" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <img src="imgs/post.avif" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="post-meta mb-2">
+                                <span class="text-muted">March 8, 2024</span>
+                            </div>
+                            <h5 class="card-title">Nutrition Tips for a Healthy Lifestyle</h5>
+                            <p class="card-text">Discover the key nutritional elements needed for maintaining a healthy lifestyle.</p>
+                            <a href="#" class="btn btn-link p-0">Read More <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <nav class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2 class="mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="mb-4">Stay updated with the latest healthcare news and tips.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Enter your email">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-4">Pharmed</h5>
+                    <p>Your trusted partner in healthcare. We provide quality medications and healthcare services to keep you and your family healthy.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Health St, Medical City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@pharmed.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Pharmed. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

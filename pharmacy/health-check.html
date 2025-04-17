@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Check-ups - Pharmed</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="text-primary">Pharmed</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                            <li><a class="dropdown-item" href="prescription.html">Prescription Services</a></li>
+                            <li><a class="dropdown-item active" href="health-check.html">Health Check-ups</a></li>
+                            <li><a class="dropdown-item" href="emergency.html">Emergency Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Appointment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="appointmentFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="appointmentFirstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="appointmentLastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="appointmentEmail" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="appointmentPhone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentDate" class="form-label">Preferred Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentTime" class="form-label">Preferred Time</label>
+                                <select class="form-select" id="appointmentTime" required>
+                                    <option value="">Select Time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentService" class="form-label">Service Type</label>
+                                <select class="form-select" id="appointmentService" required>
+                                    <option value="">Select Service</option>
+                                    <option value="prescription">Prescription Services</option>
+                                    <option value="health-check">Health Check-up</option>
+                                    <option value="consultation">Medical Consultation</option>
+                                    <option value="emergency">Emergency Services</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentDoctor" class="form-label">Preferred Doctor (Optional)</label>
+                                <select class="form-select" id="appointmentDoctor">
+                                    <option value="">Any Available Doctor</option>
+                                    <option value="dr-smith">Dr. Smith</option>
+                                    <option value="dr-johnson">Dr. Johnson</option>
+                                    <option value="dr-williams">Dr. Williams</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="appointmentNotes" class="form-label">Additional Notes</label>
+                                <textarea class="form-control" id="appointmentNotes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitAppointment">Submit Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Health Check-ups Hero Section -->
+    <section class="service-hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Health Check-ups</h1>
+                    <p class="lead mb-4">Comprehensive health screenings and preventive care services.</p>
+                    <a href="#service-details" class="btn btn-warning">Learn More</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="imgs/Health Check-ups.avif" alt="Health Check-ups" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Our Health Check-up Services</h2>
+                    <p class="lead mb-4">We offer a range of health check-up packages to help you monitor and maintain your well-being.</p>
+                    
+                    <div class="service-features mb-5">
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 rounded shadow-sm">
+                                    <i class="fas fa-heartbeat fa-2x text-primary mb-3"></i>
+                                    <h4>Basic Health Check</h4>
+                                    <p>Essential health screening including blood pressure, cholesterol, and glucose levels.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 rounded shadow-sm">
+                                    <i class="fas fa-vial fa-2x text-primary mb-3"></i>
+                                    <h4>Comprehensive Check-up</h4>
+                                    <p>Detailed health assessment with full blood work and diagnostic tests.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 rounded shadow-sm">
+                                    <i class="fas fa-user-md fa-2x text-primary mb-3"></i>
+                                    <h4>Specialist Consultation</h4>
+                                    <p>Expert medical consultation with our healthcare professionals.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="feature-card p-4 rounded shadow-sm">
+                                    <i class="fas fa-file-medical fa-2x text-primary mb-3"></i>
+                                    <h4>Health Reports</h4>
+                                    <p>Detailed health reports with personalized recommendations.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="mb-4">Check-up Packages</h3>
+                    <div class="packages">
+                        <div class="package-card p-4 rounded shadow-sm mb-4">
+                            <h4 class="mb-3">Basic Package</h4>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Blood Pressure Check</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Cholesterol Test</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Blood Sugar Test</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Basic Consultation</li>
+                            </ul>
+                            <a href="#" class="btn btn-outline-primary">Book Now</a>
+                        </div>
+                        <div class="package-card p-4 rounded shadow-sm">
+                            <h4 class="mb-3">Premium Package</h4>
+                            <ul class="list-unstyled mb-3">
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Complete Blood Work</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> ECG Test</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Urine Analysis</li>
+                                <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Specialist Consultation</li>
+                                <li><i class="fas fa-check text-primary me-2"></i> Detailed Health Report</li>
+                            </ul>
+                            <a href="#" class="btn btn-primary">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="service-sidebar">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Quick Links</h5>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Package Details</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Test Results</a></li>
+                                    <li class="mb-2"><a href="#" class="text-decoration-none">Insurance Coverage</a></li>
+                                    <li><a href="#" class="text-decoration-none">FAQ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Contact Us</h5>
+                                <p>Have questions about our health check-up services?</p>
+                                <a href="contact.html" class="btn btn-primary w-100">Get in Touch</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Take Control of Your Health</h2>
+            <p class="lead mb-4">Schedule your health check-up today and stay on top of your well-being.</p>
+            <a href="appointment.html" class="btn btn-warning btn-lg">Book Appointment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-4">Pharmed</h5>
+                    <p>Your trusted partner in healthcare. We provide quality medications and healthcare services to keep you and your family healthy.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Health St, Medical City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@pharmed.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Pharmed. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 

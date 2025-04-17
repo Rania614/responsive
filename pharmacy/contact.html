@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Pharmed</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <span class="text-primary">Pharmed</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="services.html">All Services</a></li>
+                            <li><a class="dropdown-item" href="prescription.html">Prescription Services</a></li>
+                            <li><a class="dropdown-item" href="health-check.html">Health Check-ups</a></li>
+                            <li><a class="dropdown-item" href="emergency.html">Emergency Services</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-primary" href="#" data-bs-toggle="modal" data-bs-target="#appointmentModal">Book Appointment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Appointment Modal -->
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="appointmentModalLabel">Book an Appointment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="appointmentForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="appointmentFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="appointmentFirstName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="appointmentLastName" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentEmail" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="appointmentEmail" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="appointmentPhone" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentDate" class="form-label">Preferred Date</label>
+                                <input type="date" class="form-control" id="appointmentDate" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentTime" class="form-label">Preferred Time</label>
+                                <select class="form-select" id="appointmentTime" required>
+                                    <option value="">Select Time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentService" class="form-label">Service Type</label>
+                                <select class="form-select" id="appointmentService" required>
+                                    <option value="">Select Service</option>
+                                    <option value="prescription">Prescription Services</option>
+                                    <option value="health-check">Health Check-up</option>
+                                    <option value="consultation">Medical Consultation</option>
+                                    <option value="emergency">Emergency Services</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="appointmentDoctor" class="form-label">Preferred Doctor (Optional)</label>
+                                <select class="form-select" id="appointmentDoctor">
+                                    <option value="">Any Available Doctor</option>
+                                    <option value="dr-smith">Dr. Smith</option>
+                                    <option value="dr-johnson">Dr. Johnson</option>
+                                    <option value="dr-williams">Dr. Williams</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="appointmentNotes" class="form-label">Additional Notes</label>
+                                <textarea class="form-control" id="appointmentNotes" rows="3"></textarea>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="submitAppointment">Submit Appointment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="display-4 fw-bold mb-4">Contact Us</h1>
+                    <p class="lead mb-4">We're here to help. Get in touch with us for any questions or concerns.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="imgs/Contact Us.avif" alt="Contact Us" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section class="contact-info py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
+                            <h4>Our Location</h4>
+                            <p class="mb-0">123 Health St, Medical City</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-phone fa-2x text-primary mb-3"></i>
+                            <h4>Phone Numbers</h4>
+                            <p class="mb-0">Main: (123) 456-7890<br>Emergency: (123) 456-7891</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                            <h4>Email</h4>
+                            <p class="mb-0">info@pharmed.com<br>support@pharmed.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="text-center mb-4">Send Us a Message</h2>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <input type="tel" class="form-control" id="phone">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <input type="text" class="form-control" id="subject" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Message</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section py-5">
+        <div class="container">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-0">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2155710122!2d-73.987844924164!3d40.757978971389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855c6480299%3A0x55194ec5a1ae072e!2sTimes%20Square!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours Section -->
+    <section class="business-hours py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h2 class="text-center mb-4">Business Hours</h2>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>Monday - Friday</td>
+                                            <td>8:00 AM - 8:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Saturday</td>
+                                            <td>9:00 AM - 6:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Sunday</td>
+                                            <td>10:00 AM - 4:00 PM</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Emergency Services</td>
+                                            <td>24/7 Available</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5 class="mb-4">Pharmed</h5>
+                    <p>Your trusted partner in healthcare. We provide quality medications and healthcare services to keep you and your family healthy.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="services.html" class="text-white">Services</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                        <li><a href="contact.html" class="text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="mb-4">Contact Info</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Health St, Medical City</li>
+                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@pharmed.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2024 Pharmed. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+        document.addEventListener('DOMContentLoaded', function() {
+    const appointmentForm = document.getElementById('appointmentForm');
+    const submitButton = document.getElementById('submitAppointment');
+    const appointmentModal = document.getElementById('appointmentModal');
+
+    // Handle form submission
+    submitButton.addEventListener('click', function() {
+        if (appointmentForm.checkValidity()) {
+            // Get form data
+            const formData = {
+                firstName: document.getElementById('appointmentFirstName').value,
+                lastName: document.getElementById('appointmentLastName').value,
+                email: document.getElementById('appointmentEmail').value,
+                phone: document.getElementById('appointmentPhone').value,
+                date: document.getElementById('appointmentDate').value,
+                time: document.getElementById('appointmentTime').value,
+                service: document.getElementById('appointmentService').value,
+                doctor: document.getElementById('appointmentDoctor').value,
+                notes: document.getElementById('appointmentNotes').value
+            };
+
+            // Here you would typically send the data to your server
+            console.log('Appointment data:', formData);
+
+            // Show success message
+            const modalBody = appointmentModal.querySelector('.modal-body');
+            modalBody.innerHTML = `
+                <div class="text-center py-4">
+                    <i class="fas fa-check-circle text-success fa-4x mb-3"></i>
+                    <h4>Appointment Booked Successfully!</h4>
+                    <p class="mb-0">We have received your appointment request. Our team will contact you shortly to confirm your appointment.</p>
+                </div>
+            `;
+
+            // Update modal footer
+            const modalFooter = appointmentModal.querySelector('.modal-footer');
+            modalFooter.innerHTML = `
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+            `;
+
+            // Reset form after 3 seconds and close modal
+            setTimeout(() => {
+                appointmentModal.querySelector('.btn-close').click();
+                setTimeout(() => {
+                    location.reload();
+                }, 500);
+            }, 3000);
+        } else {
+            appointmentForm.reportValidity();
+        }
+    });
+
+    // Set minimum date to today
+    const dateInput = document.getElementById('appointmentDate');
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+});
+    </script>
+</body>
+</html> 

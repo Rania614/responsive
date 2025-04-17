@@ -1,0 +1,886 @@
+/* Custom Styles for PharmaCare */
+
+:root {
+    --primary-color: #4390e2; /* Green primary color */
+    --secondary-color: #af97bf;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --teal-color: #1abc9c; /* Example Teal from image */
+    --light-blue-bg: #eef3f7; /* Light blue background for stats */
+    --warning-color: #4390e2; /* Bootstrap warning yellow/orange */
+    --light-grey-bg: #f8f9fa; /* Or slightly darker if needed */
+    --text-muted: #6c757d;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--dark-color);
+    padding-top: 70px; /* Adjusted padding for fixed navbar */
+    background-color: #e2e8f4; /* Ensure default background is white */
+}
+
+h6 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color); /* Match heading accents */
+    text-transform: uppercase;
+}
+
+/* General Section Padding */
+section {
+    padding: 4rem 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    padding: 0.8rem 0; /* Slightly reduced padding */
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    /* font-weight: bold; */ /* Removed bold to match image potentially */
+}
+
+.navbar-brand i {
+    font-size: 1.8rem; /* Adjust logo icon size */
+    vertical-align: middle;
+}
+
+
+.nav-link {
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    color: var(--dark-color); /* Standard link color */
+}
+
+.nav-link.active,
+.dropdown-item.active {
+    color: var(--primary-color) !important; /* Active link color */
+    font-weight: 600;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.navbar .btn-outline-primary {
+    border-width: 2px;
+    font-weight: 500;
+}
+
+.navbar .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* New About Hero Section Style */
+.about-hero-new {
+    background: url('https://via.placeholder.com/1500x400/2c3e50/ffffff?text=Pharmacy+Banner') no-repeat center center;
+    background-size: cover;
+    min-height: 300px; /* Adjust height as needed */
+    position: relative;
+}
+.about-hero-new::before { /* Optional overlay */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+}
+.about-hero-new .container {
+     position: relative; /* Ensure text is above overlay */
+     z-index: 2;
+}
+
+
+/* Hero Section (General - might need adjustment for index.html) */
+.hero-section {
+    padding: 6rem 0;
+    background-color: var(--light-color);
+}
+
+/* Features Section */
+.features-section .card {
+    transition: transform 0.3s ease;
+}
+
+.features-section .card:hover {
+    transform: translateY(-5px);
+}
+
+.features-section .card i {
+    color: var(--primary-color);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--light-color);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+    /* Consider styling carousel controls */
+}
+
+/* About Page Specific Styles */
+.about-content h6 {
+    font-weight: 600;
+}
+
+.vision-mission-card {
+    /* Using a placeholder gradient/image - replace '...' with actual image URL if available */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/600x400/34495e/ffffff?text=Background') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+}
+
+.vision-mission-card i {
+    color: var(--primary-color); /* Icon color */
+    background-color: #fff;
+}
+
+.contact-info-about i {
+    width: 20px; /* Align icons */
+    color: var(--primary-color);
+}
+
+.reviews-about .avatars img {
+     width: 40px;
+     height: 40px;
+     border: 2px solid white;
+     margin-left: -10px; /* Overlap avatars */
+}
+
+.reviews-about .avatars img:first-child {
+    margin-left: 0;
+}
+
+/* Team Section */
+.team-section {
+    padding: 4rem 0;
+}
+
+.team-section .nav-pills .nav-link {
+    color: var(--dark-color);
+    border: 1px solid #dee2e6;
+    border-radius: 20px;
+    margin: 0 0.5rem 0.5rem 0;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.team-section .nav-pills .nav-link.active,
+.team-section .nav-pills .nav-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.team-member-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* Rounded corners for card */
+    border: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.team-member-card img {
+    transition: transform 0.4s ease;
+}
+
+.team-member-card:hover img {
+    transform: scale(1.05);
+}
+
+.team-member-card .card-body {
+    position: absolute;
+    bottom: 15px; /* Position text overlay */
+    left: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 0.8rem 1rem;
+    border-radius: 10px; /* Rounded corners for text background */
+    text-align: center;
+}
+
+/* Stats Section */
+.stats-section {
+    background-color: var(--light-blue-bg); /* Light blue background */
+    padding: 4rem 0;
+    color: var(--dark-color);
+}
+
+.stats-section .stat-item h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.stats-section .stat-item h3 sup {
+    font-size: 1.5rem;
+    top: -1em;
+}
+
+.stats-section .stat-item h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+}
+
+.stats-section .stat-icon {
+    font-size: 3rem; /* Adjust icon size */
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--dark-color);
+}
+
+footer a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--primary-color) !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) { /* Adjust navbar collapse */
+     .navbar-nav .nav-item {
+         text-align: center;
+         margin-bottom: 0.5rem;
+     }
+     .navbar-nav .btn-outline-primary {
+         width: 50%;
+         margin: 0.5rem auto;
+         display: block;
+     }
+     .about-content .col-lg-6 {
+         text-align: center;
+     }
+     .about-content img {
+         margin-bottom: 2rem;
+     }
+      .vision-mission-card .d-flex {
+         flex-direction: column;
+         align-items: center !important;
+         text-align: center;
+     }
+     .vision-mission-card .flex-shrink-0 {
+         margin-right: 0 !important;
+         margin-bottom: 0.5rem;
+     }
+      .reviews-about {
+          justify-content: center;
+      }
+     .team-section .nav-pills {
+         justify-content: center;
+     }
+     .stats-section .stat-item {
+         margin-bottom: 2rem;
+     }
+}
+
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 65px; /* Adjust if navbar height changes */
+    }
+    .hero-section {
+        padding: 4rem 0;
+        text-align: center;
+    }
+
+    .hero-section img {
+        margin-top: 2rem;
+    }
+
+    .features-section .card {
+        margin-bottom: 1rem;
+    }
+
+    .about-hero-new {
+        min-height: 200px; /* Adjust hero height for smaller screens */
+    }
+    .about-hero-new h1 {
+        font-size: 2.5rem;
+    }
+     .footer .row > div { /* Stack footer columns */
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    .footer .text-md-end {
+        text-align: center !important;
+    }
+    .team-member-card .card-body {
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        padding: 0.5rem;
+    }
+    .team-member-card h5 {
+        font-size: 1rem;
+    }
+    .team-member-card p {
+        font-size: 0.8rem;
+    }
+     .stats-section {
+         padding: 3rem 0;
+     }
+     .stats-section .stat-item:last-child {
+         margin-bottom: 0;
+     }
+
+}
+
+/* Index Hero Section */
+.index-hero {
+    padding: 0; /* Remove default section padding */
+    position: relative;
+    background: url('https://via.placeholder.com/1920x700/cccccc/ffffff?text=Pharmacy+Background') no-repeat center center;
+    background-size: cover;
+    min-height: 70vh; /* Adjust height as needed */
+    display: flex;
+    align-items: flex-end; /* Align content to bottom */
+}
+
+.index-hero .hero-content-box {
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
+    padding: 2.5rem;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+    position: relative;
+    width: 100%;
+    margin-bottom: 0; /* Flush with bottom */
+}
+
+.index-hero .play-button {
+    position: absolute;
+    top: -30px; /* Position above the box */
+    right: 30px;
+    background-color: var(--primary-color);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.index-hero .sponsor-logos img {
+    height: 30px; /* Adjust logo size */
+    opacity: 0.7;
+    margin: 0 1rem;
+    filter: grayscale(50%);
+}
+
+/* Who We Are Section (Index Variation) */
+.who-we-are-index .image-container {
+    position: relative;
+}
+
+.who-we-are-index .image-container .btn-warning {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    /* Use --warning-color */
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--dark-color); /* Ensure text contrast */
+    font-weight: 500;
+}
+
+/* Why Choose Us Section */
+.why-choose-us .progress {
+    height: 10px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.why-choose-us .progress-bar {
+    background-color: var(--primary-color);
+}
+
+.why-choose-us .info-box {
+    background-color: var(--light-blue-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    height: 100%;
+}
+
+.why-choose-us .info-box i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.why-choose-us .carousel-control-next,
+.why-choose-us .carousel-control-prev {
+    position: absolute;
+    bottom: -50px; /* Position controls below image */
+    top: auto;
+    background-color: var(--warning-color);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    opacity: 1;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+.why-choose-us .carousel-control-prev {
+     left: calc(50% - 50px); /* Center controls */
+}
+.why-choose-us .carousel-control-next {
+     right: calc(50% - 50px); /* Center controls */
+}
+.why-choose-us .carousel-control-next:hover,
+.why-choose-us .carousel-control-prev:hover {
+     background-color: var(--primary-color);
+}
+
+
+/* Stats Section (Index Variation) */
+.stats-index {
+    background-color: white; /* White background */
+    padding: 3rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.stats-index .stat-item h3 {
+     color: var(--warning-color); /* Orange color for numbers */
+     font-size: 2.5rem;
+}
+.stats-index .stat-item h3 sup {
+    font-size: 1.3rem;
+}
+.stats-index .stat-item h4 {
+    font-size: 1.1rem;
+}
+.stats-index .stat-item p {
+    font-size: 0.9rem;
+}
+
+
+/* Services Section */
+.services-index {
+    background-color: var(--light-grey-bg);
+}
+
+.services-index .image-content-overlay {
+    position: relative;
+    color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.services-index .image-content-overlay img {
+    display: block;
+    width: 100%;
+}
+
+.services-index .overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+}
+
+.services-index .overlay-text i {
+     width: 20px;
+     margin-right: 0.5rem;
+     color: var(--primary-color);
+}
+
+.services-index .service-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    height: calc(100% - 1.5rem); /* Match height excluding margin */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.services-index .service-card i.icon {
+    font-size: 2rem;
+    color: var(--warning-color);
+    margin-bottom: 1rem;
+}
+
+.services-index .service-card-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--warning-color);
+    color: var(--warning-color);
+    text-align: center;
+    line-height: 38px; /* Adjust for border */
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.services-index .service-card-link:hover {
+    background-color: var(--warning-color);
+    color: white;
+}
+
+/* Testimonials Section (Index Variation) */
+.testimonials-index {
+    position: relative;
+    background: url('https://via.placeholder.com/1920x600/ddeeff/ffffff?text=Light+World+Map') no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.testimonials-index .testimonial-card {
+     background-color: white;
+     padding: 2rem;
+     border-radius: 15px;
+     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.testimonials-index .testimonial-card .quote-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.testimonials-index .reviewer-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonials-index .carousel-indicators button {
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin: 0 5px;
+}
+
+.testimonials-index .review-summary {
+     position: absolute;
+     bottom: 30px;
+     right: 30px;
+     background-color: rgba(255, 255, 255, 0.9);
+     padding: 1rem;
+     border-radius: 10px;
+     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.testimonials-index .review-summary .avatars img {
+    width: 30px;
+    height: 30px;
+    border: 1px solid white;
+    margin-left: -8px;
+}
+.testimonials-index .review-summary .avatars img:first-child {
+    margin-left: 0;
+}
+
+
+/* Team Section (Index Variation) */
+.team-index {
+    background-color: var(--light-grey-bg);
+}
+.team-index .nav-pills .nav-link {
+     background-color: white; /* Pills background */
+}
+.team-index .nav-pills .nav-link.active,
+.team-index .nav-pills .nav-link:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.team-index .bottom-accent {
+     height: 5px;
+     background-color: var(--warning-color);
+     width: 80%;
+     margin: 1.5rem auto 0 auto;
+     border-radius: 5px;
+}
+
+/* FAQ Section */
+.faq-index {
+    background-color: var(--light-blue-bg);
+}
+
+.faq-index .accordion-item {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 10px !important; /* Override Bootstrap */
+    margin-bottom: 1rem;
+    overflow: hidden; /* Ensure radius applies */
+}
+
+.faq-index .accordion-button {
+    font-weight: 600;
+    color: var(--dark-color);
+    background-color: white;
+}
+
+.faq-index .accordion-button:not(.collapsed) {
+    background-color: var(--light-blue-bg); /* Slightly different background when open */
+    box-shadow: none;
+    color: var(--primary-color);
+}
+
+.faq-index .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(0,0,0,.125);
+}
+
+.faq-index .accordion-button::after { /* Custom icon */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23212529'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transition: transform .2s ease-in-out;
+}
+
+.faq-index .accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234CAF50'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  transform: rotate(-180deg);
+}
+
+.faq-index .accordion-body {
+    color: var(--text-muted);
+    padding: 1rem 1.25rem;
+}
+
+.faq-index .btn-warning {
+    /* Use --warning-color */
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+}
+
+/* Store Location Section */
+.store-location-index .location-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.store-location-index .location-card img {
+    display: block;
+    width: 100%;
+    height: 300px; /* Fixed height */
+    object-fit: cover;
+}
+
+.store-location-index .location-card .overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    padding: 1.5rem;
+    color: white;
+}
+
+.store-location-index .location-card .badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: var(--dark-color);
+    font-weight: 500;
+}
+
+.store-location-index .carousel-control-next,
+.store-location-index .carousel-control-prev {
+    /* Position controls outside the cards */
+    width: 40px;
+    height: 40px;
+    background-color: var(--warning-color);
+    border-radius: 50%;
+    opacity: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 1rem; /* Add space */
+}
+.store-location-index .carousel-control-prev {
+    left: -60px;
+}
+.store-location-index .carousel-control-next {
+    right: -60px;
+}
+
+/* CTA Section */
+.cta-index {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1920x400/556677/ffffff?text=Health+Journey') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 5rem 0;
+}
+
+.cta-index .btn-warning {
+    background-color: var(--warning-color);
+    border-color: var(--warning-color);
+    color: var(--dark-color);
+    font-weight: 500;
+    padding: 0.75rem 2rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    /* Add/adjust responsive styles for new index sections */
+     .index-hero .hero-content-box {
+         padding: 1.5rem;
+     }
+     .index-hero .play-button {
+         top: -25px;
+         right: 15px;
+         width: 50px;
+         height: 50px;
+         font-size: 1.2rem;
+     }
+      .why-choose-us .col-lg-7 img {
+          margin-bottom: 4rem; /* Space for controls */
+      }
+       .store-location-index .carousel-control-next,
+       .store-location-index .carousel-control-prev {
+           display: none; /* Hide side controls on smaller screens */
+       }
+       .testimonials-index .review-summary {
+           position: static;
+           margin-top: 1rem;
+           text-align: center;
+       }
+}
+
+@media (max-width: 768px) {
+    /* Add/adjust responsive styles for new index sections */
+    h2 {
+        font-size: 1.8rem;
+    }
+    .index-hero {
+        min-height: 50vh;
+    }
+    .index-hero .hero-content-box {
+        text-align: center;
+    }
+    .index-hero .sponsor-logos {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .index-hero .sponsor-logos img {
+        margin: 0.5rem;
+        height: 25px;
+    }
+     .services-index .image-content-overlay {
+         margin-bottom: 2rem;
+     }
+      .testimonials-index .testimonial-card {
+          padding: 1.5rem;
+      }
+      .faq-index .accordion-button {
+          font-size: 0.9rem;
+      }
+       .cta-index {
+           text-align: center;
+       }
+       .cta-index .display-5 {
+           font-size: 2rem;
+       }
+
+}
+/* // ... existing code ... */
+
+/* Appointment Modal Styles */
+#appointmentModal .modal-dialog {
+    max-width: 800px;
+}
+
+#appointmentModal .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#appointmentModal .modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    padding: 1.5rem;
+}
+
+#appointmentModal .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+#appointmentModal .modal-body {
+    padding: 2rem;
+}
+
+#appointmentModal .form-label {
+    font-weight: 500;
+    color: var(--dark-color);
+}
+
+#appointmentModal .form-control,
+#appointmentModal .form-select {
+    border-radius: 8px;
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+#appointmentModal .form-control:focus,
+#appointmentModal .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+#appointmentModal .modal-footer {
+    border-top: 1px solid #dee2e6;
+    padding: 1.5rem;
+}
+
+#appointmentModal .btn-close {
+    filter: brightness(0) invert(1);
+}
+
+/* Success Message Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#appointmentModal .text-center {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #appointmentModal .modal-dialog {
+        margin: 1rem;
+    }
+    
+    #appointmentModal .modal-body {
+        padding: 1.5rem;
+    }
+}
